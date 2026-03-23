@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import redirect
 
 # request: es un objeto que contiene toda la información de la solicitud realizada por el cliente
 # HttpResponse("mensaje"): es una funcion que devuelve una respuesta HTTP con el mensaje especificado.
@@ -14,3 +15,8 @@ def libros(request, nombre=None, autor=None):
         return HttpResponse("soy solo lista de autores")
     else:
         return HttpResponse("soy vista sin parametros")
+
+
+# redireccionamiento: es una funcion que redirige a otra url
+def en_sistema(request):
+    return redirect("/libros/")
