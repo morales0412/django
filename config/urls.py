@@ -1,10 +1,11 @@
 from django.contrib import admin
 from django.urls import path
+
 # path sirve para crear rutas en Django, es decir, para definir las URL que se pueden acceder en la aplicación.
+from Libreria.views import libros
 
-from Libreria.views import saludos
-
+# path("ruta", vista): funcion que se usa para definir una ruta en Django y esto es una url estatica, osea que solo se accede mediante a la ruta que se pone y no se pueden pasar parametros por la url ,osea no se pueden usar variables en la ruta.
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("saludar/", saludos),
-]  # path("nombre_ruta", vista): es una función que se utiliza para definir una ruta en Django. "nombre_ruta" es el nombre que se le asigna a la ruta, y "vista" es la función que se ejecutará cuando se acceda a esa ruta.
+    path("libros/<str:nombre>/<str:autor>/", libros),
+]
