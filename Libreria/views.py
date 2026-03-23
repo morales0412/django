@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def saludos(
+    request,
+):  # request: es un objeto que contiene toda la información de la solicitud realizada por el cliente
+    return HttpResponse(
+        "Holaaa"
+    )  # HttpResponse("mensaje"): es una funcion que devuelve una respuesta HTTP con el mensaje especificado.
