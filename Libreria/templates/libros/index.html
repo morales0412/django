@@ -9,7 +9,16 @@
     
     <h2>Libros en existencia</h2>
     <!-- {{variable}} = se usa para mostrar el valor de una variable en el template -->
-    <p><strong>Nombre: </strong>{{ nombre }}</p>
-    <p><strong>Autor: </strong>{{ autor }}</p> 
+    <!-- {{Variable | filtro}} = se usa para aplicar un filtro a una variable en el template-->
+    <p><strong>Nombre: </strong>{{ nombre | upper }}</p>
+    <p><strong>Nombre:</strong> {{nombre | capfirst }}</p>
+    <p><strong>Nombre: </strong>{{ nombre| truncatechars:12 }}</p>
+    <p><strong>Autor: </strong>{{ autor | upper }}</p> 
+
+    <p><strong>Fecha:{{ fecha_hoy | date:"d/m/Y" }}</strong></p>
+    <p><strong>Fecha corta :{{ fecha_hoy | date:"SHORT_DATE_FORMAT" }}</strong></p>
+    <p><strong>Fecha larga :{{ fecha_hoy | date:"l d \d\e F \d\e Y" }}</strong></p>
+    <p><strong>Cantidad caracteres: {{ nombre | length }} caracteres </strong></p>
+    <p><strong> Suma: {{ valor1 | add:10 }} </strong></p>
 </body>
 </html>
