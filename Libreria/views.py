@@ -1,20 +1,19 @@
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 # request: es un objeto que contiene toda la información de la solicitud realizada por el cliente
 # HttpResponse("mensaje"): es una funcion que devuelve una respuesta HTTP con el mensaje especificado.
 
 
-# vista con parametros: es una funcion que recibe parametros a traves de la url
-def libros(request, nombre=None, autor=None):
-    if nombre and autor:
-        return HttpResponse("soy vista de libros y autores")
-    elif nombre:
-        return HttpResponse("soy solo lista de libros")
-    elif autor:
-        return HttpResponse("soy solo lista de autores")
-    else:
-        return HttpResponse("soy vista sin parametros")
+# vista con parametros: es una funcion que recibe parametros a traves de la url, ejem:
+# def libros(request, nombre, autor): es una vista que recibe dos parametros, nombre y autor, a traves de la url, y dependiendo de lo que se pase en la url, se mostrara una respuesta diferente.
+def libros(request):
+    datos_libros = {
+        "nombre": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+    }
+    # render(request, "ruta_template.html", datos): es una funcion que renderiza un template con los datos especificados, sirve para mostrar una pagina web con los datos que se le pasaron, y se devuelve el html renderizado , como respuesta HTTP.
+    return render(request, "libros/index.html", datos_libros)
 
 
 # redireccionamiento: es una funcion que redirige a otra url

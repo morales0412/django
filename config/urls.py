@@ -11,7 +11,7 @@ from Libreria.views import libros, en_sistema
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("libros/", libros),
-    path("libros/<str:nombre>/", libros),
-    path("libros/<str:autor>/", libros),
+    # path("libros/<str:nombre>/", libros),
+    # path("libros/<str:autor>/", libros),
     path("libros/a_sistema/", en_sistema),
 ]
