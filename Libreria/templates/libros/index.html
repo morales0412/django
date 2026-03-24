@@ -9,16 +9,37 @@
     
     <h2>Libros en existencia</h2>
     <!-- {{variable}} = se usa para mostrar el valor de una variable en el template -->
-    <!-- {{Variable | filtro}} = se usa para aplicar un filtro a una variable en el template-->
-    <p><strong>Nombre: </strong>{{ nombre | upper }}</p>
-    <p><strong>Nombre:</strong> {{nombre | capfirst }}</p>
-    <p><strong>Nombre: </strong>{{ nombre| truncatechars:12 }}</p>
-    <p><strong>Autor: </strong>{{ autor | upper }}</p> 
+    {# {{variable | filtro}} = se usa para aplicar un filtro a una variable en el template #}
+    <p>Nombre: {{nombre}}</p>
+    <p>Autor: {{ autor}}</p>
+    <p>Fecha: {{fecha_hoy | date:"d/m/Y H:i"}}</p>
+    <p>Precio: {{precio}}</p>
 
-    <p><strong>Fecha:{{ fecha_hoy | date:"d/m/Y" }}</strong></p>
-    <p><strong>Fecha corta :{{ fecha_hoy | date:"SHORT_DATE_FORMAT" }}</strong></p>
-    <p><strong>Fecha larga :{{ fecha_hoy | date:"l d \d\e F \d\e Y" }}</strong></p>
-    <p><strong>Cantidad caracteres: {{ nombre | length }} caracteres </strong></p>
-    <p><strong> Suma: {{ valor1 | add:10 }} </strong></p>
+    {#comentarios de una sola linea #}
+    
+    {%comment%} comentarios multilinea
+        tag de un if
+        {% if condicion %} = se usa para evaluar una condicion en el template
+        {% else %} = se usa para evaluar la condicion contraria a la del if
+        {% endif %} = se usa para cerrar el tag de un if
+    {% endcomment%}
+
+    {%comment%}
+        tag de un for
+        {% for variable in iterable %} = se usa para iterar sobre un iterable en el template
+        {% endfor %} = se usa para cerrar el tag de un for
+    {% endcomment%}
+
+
+    {% if precio >= 50%}
+        <p>oferta especial</p>
+    {%else%}
+        <p> precio de lanzamiento</p>
+    {% endif %}
+
+    {% for f in '123456'%}
+        <p>Vuelta de bucle: {{forloop.counter}}</p>
+    {% endfor %}
+
 </body>
 </html>

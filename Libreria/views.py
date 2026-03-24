@@ -13,7 +13,7 @@ def libros(request):
         "nombre": "Cien años de Soledad",
         "autor": "Gabriel García Márquez",
         "fecha_hoy": datetime.now(),
-        "valor1": 50,
+        "precio": 10,
     }
     # render(request, "ruta_template.html", datos): es una funcion que renderiza un template con los datos especificados, sirve para mostrar una pagina web con los datos que se le pasaron, y se devuelve el html renderizado , como respuesta HTTP.
     return render(request, "libros/index.html", datos_libros)
