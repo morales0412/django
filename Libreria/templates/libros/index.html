@@ -15,31 +15,7 @@
     <p>Fecha: {{fecha_hoy | date:"d/m/Y H:i"}}</p>
     <p>Precio: {{precio}}</p>
 
-    {#comentarios de una sola linea #}
-    
-    {%comment%} comentarios multilinea
-        tag de un if
-        {% if condicion %} = se usa para evaluar una condicion en el template
-        {% else %} = se usa para evaluar la condicion contraria a la del if
-        {% endif %} = se usa para cerrar el tag de un if
-    {% endcomment%}
-
-    {%comment%}
-        tag de un for
-        {% for variable in iterable %} = se usa para iterar sobre un iterable en el template
-        {% endfor %} = se usa para cerrar el tag de un for
-    {% endcomment%}
-
-
-    {% if precio >= 50%}
-        <p>oferta especial</p>
-    {%else%}
-        <p> precio de lanzamiento</p>
-    {% endif %}
-
-    {% for f in '123456'%}
-        <p>Vuelta de bucle: {{forloop.counter}}</p>
-    {% endfor %}
+    <a href="{% url 'detalle_libro' %}"> detalles </a>
 
 </body>
 </html>

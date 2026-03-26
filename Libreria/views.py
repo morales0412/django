@@ -19,6 +19,14 @@ def libros(request):
     return render(request, "libros/index.html", datos_libros)
 
 
+def detalle_libro(request):
+    detalle = {
+        "nombre_libro": """Cien años de soledad, es una novela de Gabriel García Márquez, 
+        ganador del premio Nobel de literatura"""
+    }
+    return render(request, "libros/detalle.html", detalle)
+
+
 # redireccionamiento: es una funcion que redirige a otra url
 def en_sistema(request):
     return redirect("/libros/")
