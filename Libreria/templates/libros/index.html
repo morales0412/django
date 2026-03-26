@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+<!-- hereda de la clase base -->
+{% extends 'base.html'%}
+<!-- Sobrescribe el bloque del titulo -->
+{%block title%}Libros{%endblock%}
+
+<!-- Sobrescribe el bloque de contenido -->
+{% block content %}
     <h2>Libros en existencia</h2>
     <!-- {{variable}} = se usa para mostrar el valor de una variable en el template -->
     {# {{variable | filtro}} = se usa para aplicar un filtro a una variable en el template #}
@@ -16,6 +14,4 @@
     <p>Precio: {{precio}}</p>
 
     <a href="{% url 'detalle_libro' %}"> detalles </a>
-
-</body>
-</html>
+{% endblock%}

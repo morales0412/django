@@ -1,0 +1,25 @@
+<!-- Creacion de la plantilla base y se ponen los tags para que las plantillas hijas puedan reemplazar el contenido-->
+<!-- El contenido que no tenga tag sera el mismo en todas las plantillas hijas-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- con ese tag se puede sobrescribir el contenido de un bloque en una plantilla hija -->
+    <!-- %block tittle%  titulo %endblock-->
+    <title>{% block tittle %} Plantilla base {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Libreria </h1>
+    </header>
+<!-- Con ese tag se puede sobrescribir el contenido de un bloque en una plantilla hija-->
+{% block content %}
+
+{% endblock %}
+<footer>
+    <hr>
+    <p>Libreria</p>
+</footer>
+</body>
+</html>

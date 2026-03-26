@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del libro</title>
-</head>
+<!--hereda de la blase padre-->
+{% extends 'base.html'%}
+
+<!-- Sobrescribe el bloque de titulo-->
+{% block tittle %} Detalle  libro {%endblock%}
+
+<!-- Sobrescribe el bloque de contenido-->
+{%block content%}
 <body>
     <h2>Detalle del libro</h2>
     <p>{{nombre_libro}}</p>
 <!-- Esto es una url tag-->
-<!-- <a href = {%url 'alias puesto en urls.py'%}> texto </a> = sirve para crear un enlace a otra pagina-->
+{% comment %}
+<a href = {%url 'alias puesto en urls.py'%}> texto </a> = sirve para crear un enlace a otra pagina
+{% endcomment %}
+
     <a href="{% url 'libros' %}"> Volver </a>
-</body>
-</html>
+{% endblock%}
