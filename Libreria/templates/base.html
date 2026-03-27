@@ -1,6 +1,8 @@
 <!-- Creacion de la plantilla base y se ponen los tags para que las plantillas hijas puedan reemplazar el contenido-->
 <!-- El contenido que no tenga tag sera el mismo en todas las plantillas hijas-->
-<!DOCTYPE html>
+
+<!-- Carga los archivos estaticos -->
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +10,20 @@
     <!-- con ese tag se puede sobrescribir el contenido de un bloque en una plantilla hija -->
     <!-- %block tittle%  titulo %endblock-->
     <title>{% block tittle %} Plantilla base {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'libreria/css/estilos.css' %}"> <!-- Carga el archivo de estilos-->
 </head>
 <body>
     <header>
+        <img src = "{% static 'libreria/img/logo.jpg'%} " alt = "logo"> <!-- indica de donde se carga la imagen -->
         <h1>Libreria </h1>
     </header>
 <!-- Con ese tag se puede sobrescribir el contenido de un bloque en una plantilla hija-->
+    <div class = "container">
 {% block content %}
 
 {% endblock %}
+</div>
+<script src="{% static 'libreria/js/main.js' %}"> </script> <!-- Carga el archivo JS-->
 <footer>
     <hr>
     <p>Libreria</p>

@@ -24,7 +24,7 @@ SECRET_KEY = "django-insecure-ycuibo)@6q3+9l$ej-=vy!q&0h7=o9d29ytx*)+95n=&xla9au
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # esto sirve para mostrar los errores en el navegador, pero no es recomendable dejarlo en True en produccion
-DEBUG = False
+DEBUG = True
 
 # esto sirve para indicar a que dominios se puede acceder a la aplicacion, en produccion se recomienda poner el dominio de la aplicacion, pero en desarrollo se puede poner "*" para permitir el acceso desde cualquier dominio
 ALLOWED_HOSTS = ["*"]
@@ -119,4 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+# esto sirve para indicar a django donde se encuentran los archivos estaticos
 STATIC_URL = "static/"
+# un archivo estatico es un archivo que no cambia, como una imagen, un archivo css o un archivo js.
+
+STATIC_FILES_DIRS = [BASE_DIR / "static"]

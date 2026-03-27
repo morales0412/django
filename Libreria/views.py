@@ -32,6 +32,7 @@ def detalle_libro(request):
 
     except Exception as error:
         raise Http404("Ruta no valida")
+    return render(request, "libros/detalle.html", detalle)
 
 
 # redireccionamiento: es una funcion que redirige a otra url
